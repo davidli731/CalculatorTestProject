@@ -1,0 +1,31 @@
+{
+  "name": "calculator_test_project",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "npm run schema:build && tsc",
+    "dev": "npm run schema:build && concurrently \"npm:build:dev\" \"npm:start:dev\"",
+    "start:dev": "nodemon -L dist/index.js",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "schema:build": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@apollo/server": "^4.5.0",
+    "apollo-server-express": "^3.12.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "prisma": "^4.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.8",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.2"
+  }
+}
